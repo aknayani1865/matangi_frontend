@@ -11,7 +11,7 @@ const AdminPanel = () => {
     navigate("/");
   };
   const handleBackToHome = () => {
-    navigate("/");
+    navigate("/admin");
   };
   const styles = {
     adminPanel: {
