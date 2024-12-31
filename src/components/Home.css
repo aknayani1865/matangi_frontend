@@ -13,11 +13,13 @@
   }
   
   h1 {
-    color: #e2e9ea;
+    color: #f4f4f4;
     margin-bottom: 10px;
     font-size: 3rem;
   }
-  
+  .head{
+    color: white;
+  }
   p {
     color: #f4f4f4;
     margin-bottom: 20px;
@@ -39,29 +41,11 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-image: url("../assets/images/landing1.jpeg"),
-      url("../assets/images/landing2.jpeg"),
-      url("../assets/images/landing3.jpeg");
+    background-image: url("../assets/images/back\ image.jpeg");
     background-size: cover;
     background-position: center;
     animation: slideshow 12s infinite;
   }
-  
-  @keyframes slideshow {
-    0% {
-      background-image: url("../assets/images/landing1.jpeg");
-    }
-    33% {
-      background-image: url("../assets/images/landing2.jpeg");
-    }
-    66% {
-      background-image: url("../assets/images/landing3.jpeg");
-    }
-    100% {
-      background-image: url("../assets/images/landing1.jpeg");
-    }
-  }
-  
   .overlay {
     position: absolute;
     top: 0;
