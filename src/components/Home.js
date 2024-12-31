@@ -64,7 +64,7 @@ const Home = () => {
       {/* Landing Section */}
       <div className="landing-section">
         <div className="overlay">
-          <h1 className="head">Welcome to Matangi AutoMobiles</h1>
+          <h1 className="head">Welcome to Matangi Engineering</h1>
           <p>Your one-stop shop for all tractor spare parts!</p>
         </div>
       </div>
