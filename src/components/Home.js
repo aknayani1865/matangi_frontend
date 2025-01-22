@@ -4,7 +4,7 @@ import { Search, Tractor, Loader2, LogIn } from "lucide-react";
 import axios from "axios";
 import "./Home.css";
 import Footer from "./Footer";
-
+import Logo from "../assets/images/logo.png"
 const Home = () => {
   const [vehicles, setVehicles] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -54,7 +54,7 @@ const Home = () => {
       {/* Navbar */}
       <nav className="navbar">
       <span className="nname" onClick={handleBackToHome} style={{ cursor: "pointer" }}>
-            Matangi Engineering
+            <img className="logo" src={Logo} alt="Matangi Automobiles" />
         </span>
         <button className="login-button" onClick={handleLoginNavigation}>
           Login

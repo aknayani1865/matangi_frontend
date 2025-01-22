@@ -4,6 +4,8 @@ import axios from "axios";
 import "./SpareParts.css";
 import './team.css';
 import Footer from "./Footer";
+import Logo from "../assets/images/logo.png"
+
 const SpareParts = () => {
   const { productId } = useParams(); // Get product ID from the URL
   const navigate = useNavigate(); // Hook to handle navigation
@@ -43,8 +45,8 @@ const SpareParts = () => {
       <div className="spare-parts">
        <nav className="navbar">
        <span className="nname" onClick={handleBackToHome} style={{ cursor: "pointer" }}>
-          Matangi Engineering
-        </span>
+       <img className="logo" src={Logo} alt="Matangi Automobiles" />
+       </span>
         <button className="login-button" onClick={handleLoginNavigation}>
           Login
         </button>

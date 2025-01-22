@@ -9,7 +9,10 @@
     flex: 1; /* Grows to fill space between the navbar and footer */
 
   }
-  
+  .logo {
+    width: 150px;
+    height: 45px;
+  }
   .spare-parts h1 {
     font-size: 2rem;
     color: #333;
