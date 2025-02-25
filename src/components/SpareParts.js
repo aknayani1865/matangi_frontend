@@ -5,6 +5,8 @@ import "./SpareParts.css";
 import './team.css';
 import Footer from "./Footer";
 import Logo from "../assets/images/logo.png"
+import { Menu, MenuItem, IconButton } from "@mui/material";
+import { Search, Tractor, Loader2, LogIn, Menu as MenuIcon } from "lucide-react";
 
 const SpareParts = () => {
   const { productId } = useParams(); // Get product ID from the URL
@@ -12,6 +14,8 @@ const SpareParts = () => {
   const [spareParts, setSpareParts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null); // State for Menu anchor element
+
 
   useEffect(() => {
     // Fetch spare parts from the backend using the product ID
@@ -39,18 +43,48 @@ const SpareParts = () => {
   const handleLoginNavigation = () => {
     navigate("/login");
   };
+  // Open the dropdown menu
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget); // Set the element that the menu will be anchored to
+  };
+
+  // Close the dropdown menu
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <div className="page-container">
 
       <div className="spare-parts">
-       <nav className="navbar">
-       <span className="nname" onClick={handleBackToHome} style={{ cursor: "pointer" }}>
-       <img className="logo" src={Logo} alt="Matangi Automobiles" />
-       </span>
-        <button className="login-button" onClick={handleLoginNavigation}>
-          Login
-        </button>
-      </nav>
+      <nav className="navbar">
+          <span
+            className="nname"
+            onClick={handleBackToHome}
+            style={{ cursor: "pointer" }}
+          >
+            <img className="logo" src={Logo} alt="Matangi Automobiles" />
+          </span>
+
+          {/* Menu Icon */}
+          <IconButton
+            edge="end"
+            color="inherit"
+            onClick={handleMenuClick}
+            aria-label="menu"
+          >
+            <MenuIcon size={24} />
+          </IconButton>
+
+          {/* Dropdown Menu */}
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={handleLoginNavigation}>Login</MenuItem>
+            {/* You can add more menu items here */}
+          </Menu>
+        </nav>
       <h1 className="head">Spare Parts</h1>
 
       {loading ? (
